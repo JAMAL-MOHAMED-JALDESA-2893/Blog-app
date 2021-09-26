@@ -4,7 +4,7 @@ from flask_login import login_required, current_user
 from ..models import User, Post, Comment
 from .forms import UpdateProfile, PostForm, CommentForm
 from .. import db, photos
-from ..request import get_quotes
+from ..requests import get_quotes
 
 
 @main.route('/')
