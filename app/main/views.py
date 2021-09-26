@@ -55,3 +55,26 @@ def update_pic(uname):
         db.session.commit()
     return redirect(url_for('main.profile', uname=uname))
 
+
+@main.route('/post/new', methods=['GET', 'POST'])
+@login_required
+def post():
+    """
+    View Post function that returns the Post page and data
+    """
+    post_form = PostForm()
+
+    if post_form.validate_on_submit():
+        post_title = post_form.post_title.data
+        description = post_form.description.data
+        # user = current_user
+
+        new_post = Post(post_title=post_title, description=description, author=current_user)
+        db.session.add(new_post)
+        db.session.commit()
+
+        return redirect(url_for('main.all'))
+
+    title = 'New Post | One Minute Pitch'
+    return render_template('post.html', title=title, post_form=post_form)    
+
