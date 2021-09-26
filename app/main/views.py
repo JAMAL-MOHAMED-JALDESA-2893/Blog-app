@@ -80,7 +80,7 @@ def post():
 
 
 
-  @main.route('/Post/all', methods=['GET', 'POST'])
+@main.route('/Post/all', methods=['GET', 'POST'])
 @login_required
 def all():
     posts = Post.query.all()
@@ -101,3 +101,15 @@ def view(id):
     return render_template('view.html', post=post, post_comments=post_comments, comment_form=comment_form)
   
 
+
+@main.route('/delete/<int:id>', methods=['GET', 'POST'])
+@login_required
+def delete(id):
+    post = Post.query.get_or_404(id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+
+    # flash('Your post has been deleted', 'successfully')
+    return redirect(url_for('main.all'))
