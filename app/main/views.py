@@ -102,17 +102,6 @@ def view(id):
   
 
 
-@main.route('/delete/<int:id>', methods=['GET', 'POST'])
-@login_required
-def delete(id):
-    post = Post.query.get_or_404(id)
-    if post.author != current_user:
-        abort(403)
-    db.session.delete(post)
-    db.session.commit()
-
-  
-    return redirect(url_for('main.all'))
 
 
 @main.route('/Update/<int:id>', methods=['GET', 'POST'])
@@ -144,3 +133,17 @@ def comment(id):
         new_comment.save_comment()
 
     return render_template('view.html', comment_form=comment_form)
+
+
+
+@main.route('/delete/<int:id>', methods=['GET', 'POST'])
+@login_required
+def delete(id):
+    post = Post.query.get_or_404(id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+
+  
+    return redirect(url_for('main.all'))
