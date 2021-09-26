@@ -111,5 +111,24 @@ def delete(id):
     db.session.delete(post)
     db.session.commit()
 
-    # flash('Your post has been deleted', 'successfully')
+  
     return redirect(url_for('main.all'))
+
+
+@main.route('/Update/<int:id>', methods=['GET', 'POST'])
+@login_required
+def update_post(id):
+    post = Post.query.get_or_404(id)
+    if post.author != current_user:
+        abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.post_title = form.post_title.data
+        post.description = form.description.data
+        db.session.commit()
+        flash('Your post has been Updated', 'successfully')
+        return redirect(url_for('main.all'))
+    elif request.method == 'GET':
+        form.post_title.data = post.post_title
+        form.description.data = post.description
+    return render_template('update_post.html', form=form)    
