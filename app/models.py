@@ -59,3 +59,34 @@ class Comment(db.Model):
 
     def __repr__(self):
         return f'Comments: {self.comment}'
+
+
+
+class Post(db.Model):
+    __tablename__ = 'posts'
+
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.DateTime, default=datetime.utcnow)
+    post_title = db.Column(db.String(255), index=True)
+    description = db.Column(db.String(255), index=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    # comments = db.relationship('Comment', backref='author', lazy=True)
+
+    def save_post(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_posts(cls, id):
+        posts = Post.query.filter_by(id=id).all()
+        return posts
+
+    @classmethod
+    def get_all_posts(cls):
+        posts = Post.query.order_by('-id').all()
+        return posts
+
+    def __repr__(self):
+        return f'Posts {self.post_title}'
+
