@@ -7,7 +7,6 @@ class Config:
     '''
 
     QOUTE_API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
-    MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
     SECRET_KEY = os.urandom(32)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
