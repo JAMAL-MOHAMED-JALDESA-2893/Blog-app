@@ -78,3 +78,26 @@ def post():
     title = 'New Post | One Minute Pitch'
     return render_template('post.html', title=title, post_form=post_form)    
 
+
+
+  @main.route('/Post/all', methods=['GET', 'POST'])
+@login_required
+def all():
+    posts = Post.query.all()
+    quote = get_quotes()
+    return render_template('allpost.html', posts=posts, quote=quote)
+
+
+@main.route('/view/<int:id>', methods=['GET', 'POST'])
+@login_required
+def view(id):
+    post = Post.query.get_or_404(id)
+    post_comments = Comment.query.filter_by(post_id=id).all()
+    comment_form = CommentForm()
+    if comment_form.validate_on_submit():
+        new_comment = Comment(post_id=id, comment=comment_form.comment.data, author=current_user)
+        new_comment.save_comment()
+
+    return render_template('view.html', post=post, post_comments=post_comments, comment_form=comment_form)
+  
+
