@@ -4,13 +4,14 @@ from flask_login import login_required, current_user
 from ..models import User, Post, Comment
 from .forms import UpdateProfile, PostForm, CommentForm
 from .. import db, photos
-from ..requests import get_quotes
+from ..requests import get_quote
 
 
 @main.route('/')
 def index():
-    quote = get_quotes()
-    return render_template('index.html', quote = quote)
+    quote = get_quote()
+    posts = Post.query.all()
+    return render_template('blogs.html', quote = quote,posts=posts)
 
 
 @main.route('/user/<uname>')
@@ -84,8 +85,8 @@ def post():
 @login_required
 def all():
     posts = Post.query.all()
-    quote = get_quotes()
-    return render_template('allpost.html', posts=posts, quote=quote)
+    quote = get_quote()
+    return render_template('blogs.html', posts=posts, quote=quote)
 
 
 @main.route('/view/<int:id>', methods=['GET', 'POST'])

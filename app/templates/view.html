@@ -9,12 +9,12 @@
             <div class="body-content mt-3">
                 <h4 class="post-title">{{post.post_title}}</h4>
                 <h5 class="subtitle"> {{post.description}}</h5>
-                <h5 class="post-name"> posted by ~ {{post.author.username}}</h5>
-                <p class="date text-muted">Posted on ~ {{post.date.strftime('%Y-%m-%d')}}</p>
+                <h5 class="post-name"> author : {{post.author.username}}</h5>
+                <p class="date text-muted">Posted on : {{post.date.strftime('%Y-%m-%d')}}</p>
                 <hr>
                 {% if post.author == current_user %}
-                <a href="{{ url_for('main.delete', id=post.id) }}" class="btn  btn-sm btn-danger"><i class="fa fa-trash"></i> delete</a>
-                <a href="{{ url_for('main.update_post', id=post.id) }}" class="btn btn-sm btn-success"><i class="fa fa-check"></i> Update</a>
+ 
+                <a href="{{ url_for('main.update_post', id=post.id) }}" class="btn btn-sm btn-outline-success"> Update</a>
                 {% endif %}
             </div>
         </div>

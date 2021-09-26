@@ -1,0 +1,108 @@
+.navbar-custom{
+  box-shadow: 2px 2px 2px;
+}
+.nav-link-custom{
+  color: black;
+}
+.logo-title{
+  font-style: italic;
+}
+.navbar-brand{
+  font-size: 20px;
+}
+.btn-default{
+  background: cornflowerblue !important;
+}
+.profile-img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+#home-banner{
+  background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 70vh;
+}
+
+.banner-content{
+  text-align: center;
+  padding-top: 10%;
+}
+
+.footer{
+  background: darkgrey;
+  text-align: center;
+  height: auto;
+  padding: 15px;
+}
+
+.social-icons {
+  padding-top: 20px;
+}
+
+.fa-facebook,
+.fa-twitter,
+.fa-instagram{
+  border: 1px solid black;
+  border-radius: 50%;
+  background: #000;
+  color: white;
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+}
+
+#post-banner{
+  padding-top: 15%;
+}
+
+.post-title{
+  font-family: 'Kaushan Script', cursive;
+}
+
+.navbar-brand{
+  font-family: 'Gabriela', serif;
+}
+
+.subtitle{
+  font-family: 'Gabriela', serif;
+}
+
+.logo-title{
+  font-family: 'Gabriela', serif;
+  font-style: italic;
+}
+
+.post-name{
+  font-family: 'Gabriela', serif;
+  font-style: italic;
+}
+
+.date{
+  font-family: 'Gabriela', serif;
+  font-style: italic;
+}
+
+.quoted-author{
+  font-family: 'Kaushan Script', cursive;
+}
+
+.quoted-quote{
+  font-family: 'Gabriela', serif;
+   font-style: italic;
+}
+
+.card-title > h2{
+  font-family: 'Gabriela', serif;
+}
+
+.banner-post-banner{
+  background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 70vh;
+}

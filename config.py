@@ -6,10 +6,12 @@ class Config:
     
     '''
 
-    QOUTE_API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
-    SECRET_KEY = os.urandom(32)
+   
+   
+    SECRET_KEY = 'sicario2793'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:sicario2793@localhost/blogs'
 
    
     
@@ -39,7 +41,9 @@ class ProdConfig(Config):
     pass
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:sicario2793@localhost/blogs'
+    
+    pass
+   
 
 
 
@@ -61,8 +65,7 @@ config_options = {
     'development':DevConfig,
     'production':ProdConfig,
     'test':TestConfig
-}    
-
+    }    
 
 
 
