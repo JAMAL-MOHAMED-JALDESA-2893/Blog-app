@@ -11,7 +11,7 @@ class Config:
     SECRET_KEY = 'sicario2793'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:sicario2793@localhost/blogs'
+   
 
    
     
@@ -55,6 +55,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:sicario2793@localhost/blogs'
 
     DEBUG = True
 
