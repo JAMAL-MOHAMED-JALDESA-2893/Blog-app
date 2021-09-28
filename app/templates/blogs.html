@@ -30,7 +30,7 @@
                     <img src="{{ post.author.profile_pic_path }}" alt="">
                     <p class="date text-muted">Posted on ~ {{post.date.strftime('%Y-%m-%d')}}</p>
                     <hr>
-                    <a href="{{ url_for('main.view', id=post.id) }}" class="btn btn-sm btn-outline-info"></i> View</a>
+            
                     <a href="{{ url_for('main.view', id=post.id) }}" class="btn btn-sm btn-outline-dark"> Comments</a>
                 </div>
                 {% endfor %}

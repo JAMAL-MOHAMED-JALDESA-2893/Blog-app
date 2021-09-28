@@ -19,13 +19,7 @@
   border-radius: 50%;
 }
 
-#home-banner{
-  background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 70vh;
-}
+
 
 .banner-content{
   text-align: center;
@@ -60,49 +54,42 @@
 }
 
 .post-title{
-  font-family: 'Kaushan Script', cursive;
+  font-family: cursive;
 }
 
 .navbar-brand{
-  font-family: 'Gabriela', serif;
+  font-family:  serif;
 }
 
 .subtitle{
-  font-family: 'Gabriela', serif;
+  font-family:  serif;
 }
 
 .logo-title{
-  font-family: 'Gabriela', serif;
+  font-family:  serif;
   font-style: italic;
 }
 
 .post-name{
-  font-family: 'Gabriela', serif;
+  font-family:  serif;
   font-style: italic;
 }
 
 .date{
-  font-family: 'Gabriela', serif;
+  font-family:  serif;
   font-style: italic;
 }
 
 .quoted-author{
-  font-family: 'Kaushan Script', cursive;
+  font-family:  cursive;
 }
 
 .quoted-quote{
-  font-family: 'Gabriela', serif;
+  font-family:  serif;
    font-style: italic;
 }
 
 .card-title > h2{
-  font-family: 'Gabriela', serif;
+  font-family:  serif;
 }
 
-.banner-post-banner{
-  background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 70vh;
-}
